@@ -1,0 +1,51 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Mob Monitor BP",
+    "description": "A minecraft add-on that let's you watch your favorite pets!",
+    "uuid": "39878c5c-404e-4264-9471-9ae337e13c04",
+    "version": [
+      1,
+      0,
+      0
+    ],
+    "min_engine_version": [
+      1,
+      20,
+      30
+    ]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "7db7978e-8267-4a0a-b72c-89daddb28a79",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "type": "script",
+      "language": "javascript",
+      "entry": "scripts/index.js",
+      "uuid": "5de55ba7-9842-472a-a094-a15ab7ae2d0c",
+      "version": "1.16.0"
+    }
+  ],
+  "metadata": {
+    "authors": [
+      "TheoristMC"
+    ]
+  },
+  "dependencies": [
+    {
+      "module_name": "@minecraft/server",
+      "version": "1.16.0"
+    },
+    {
+      "module_name": "@minecraft/server-ui",
+      "version": "1.3.0"
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+{
+  "namespace": "mob_monitor_watcher",
+  "watcher_form@server_form.long_form": {
+    "size": [
+      190,
+      250
+    ],
+    "$child_control": "mob_monitor_watcher.watcher_form_panel"
+  },
+  "watcher_form_panel": {
+    "type": "stack_panel",
+    "size": [
+      "100%",
+      "100%"
+    ],
+    "use_child_anchors": true,
+    "controls": [
+      {
+        "scrolling_panel@common.scrolling_panel": {
+          "size": [
+            "100%",
+            "fill"
+          ],
+          "$show_background": false,
+          "$scrolling_content": "mob_monitor_watcher.watcher_form_scrolling_content",
+          "$scroll_size": [
+            5,
+            "100% - 4px"
+          ],
+          "$scrolling_pane_size": [
+            "100% - 4px",
+            "100% - 2px"
+          ],
+          "$scrolling_pane_offset": [
+            2,
+            0
+          ],
+          "$scroll_bar_right_padding_size": [
+            0,
+            0
+          ]
+        }
+      }
+    ]
+  },
+  "watcher_form_scrolling_content": {
+    "type": "stack_panel",
+    "size": [
+      "100% - 1px",
+      "100%c"
+    ],
+    "controls": [
+      {
+        "vertical_padding": {
+          "type": "panel",
+          "size": [
+            "100%",
+            2
+          ]
+        }
+      },
+      {
+        "search_bar@common.text_edit_box": {
+          "size": [
+            "100%",
+            20
+          ],
+          "$text_box_name": "mob_monitor_text_box",
+          "$text_edit_text_control": "mob_monitor_search",
+          "$place_holder_text": "Search.. (Case sensitive)"
+        }
+      },
+      {
+        "watcher_form_button_factory@watcher_form_button_factory": {}
+      }
+    ]
+  }, 
+  "watcher_form_button_factory": {
+    "type": "stack_panel",
+    "size": [
+      "100%",
+      "100%c"
+    ],
+    "factory": {
+      "name": "buttons",
+      "control_name": "mob_monitor_watcher.watcher_form_button"
+    },
+    "collection_name": "form_buttons",
+    "bindings": [
+      {
+        "binding_name": "#form_button_length",
+        "binding_name_override": "#collection_length"
+      }
+    ]
+  },
+  "watcher_form_button": {
+    "type": "panel",
+    "size": [
+      "100%",
+      "100%c + 2px"
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "mob_monitor_search",
+        "source_property_name": "#item_name",
+        "target_property_name": "#search"
+      },
+      {
+        "binding_name": "#form_button_text",
+        "binding_collection_name": "form_buttons",
+        "binding_type": "collection"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(not ((#form_button_text - #search) = #form_button_text) or (#search = ''))",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "watcher_form_button@common_buttons.light_content_button": {
+          "size": [
+            "100%",
+            128
+          ],
+          "$pressed_button_name": "button.form_button_click",
+          "$button_content": "mob_monitor_watcher.watcher_form_button_content",
+          "$default_button_texture": "textures/ui/dialog_background_opaque",
+          "$hover_button_texture": "textures/ui/dialog_background_opaque",
+          "$pressed_button_texture": "textures/ui/dialog_background_opaque",
+          "$focus_border_size": [
+            0,
+            0
+          ],
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "form_buttons"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "mob_renderer_bg@horse.renderer_bg": {
+    "size": [
+      "100%",
+      "100%"
+    ],
+    "controls": [
+      {
+        "black": {
+          "type": "image",
+          "texture": "textures/ui/Black",
+          "size": [
+            "100% - 4px",
+            "100% - 4px"
+          ],
+          "clips_children": true,
+          "controls": [
+            {
+              "renderer": {
+                "type": "custom",
+                "size": [
+                  "15%",
+                  "15%"
+                ],
+                "offset": [
+                  0,
+                  "30%"
+                ],
+                "renderer": "live_horse_renderer",
+                "animation_reset_name": "screen_animation_reset",
+                "anims": [
+                  "@common.screen_exit_size_animation_push",
+                  "@common.screen_exit_size_animation_pop",
+                  "@common.screen_entrance_size_animation_push",
+                  "@common.screen_entrance_size_animation_pop"
+                ],
+                "bindings": [
+                  {
+                    "binding_name": "#form_button_texture",
+                    "binding_name_override": "#entity_id",
+                    "binding_collection_name": "form_buttons",
+                    "binding_type": "collection"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "border@common_buttons.focus_border": {
+          "ignored": "$default_state",
+          "layer": 4,
+          "size": [
+            "100%sm - 3px",
+            "100%sm - 3px"
+          ]
+        }
+      }
+    ]
+  },
+  "watcher_form_button_content": {
+    "type": "stack_panel",
+    "size": [
+      "100% - 4px",
+      "100% - 4px"
+    ],
+    "controls": [
+      {
+        "mob_renderer_bg@mob_renderer_bg": {
+          "size": [
+            "100%",
+            "fill"
+          ]
+        }
+      },
+      {
+        "mob_name_panel": {
+          "type": "panel",
+          "size": [
+            "100%",
+            12
+          ],
+          "controls": [
+            {
+              "mob_name": {
+                "type": "label",
+                "text": "#text",
+                "text_alignment": "center",
+                "size": [
+                  "100% - 2px",
+                  10
+                ],
+                "color": "$title_text_color",
+                "bindings": [
+                  {
+                    "binding_name": "#form_button_text",
+                    "binding_name_override": "#text",
+                    "binding_collection_name": "form_buttons",
+                    "binding_type": "collection"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

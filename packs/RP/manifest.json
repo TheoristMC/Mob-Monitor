@@ -1,0 +1,35 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "Mob Monitor RP",
+		"description": "A minecraft add-on that let's you watch your favorite pets!",
+		"uuid": "5ad6e0ca-b925-40ba-a0dc-f309586beba1",
+		"pack_scope": "world",
+		"version": [
+			1,
+			0,
+			0
+		],
+		"min_engine_version": [
+			1,
+			20,
+			30
+		]
+	},
+	"metadata": {
+		"authors": [
+			"TheoristMC"
+		]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "6156ee00-9019-4f02-814b-8f24571b4e10",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	]
+}

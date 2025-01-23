@@ -1,0 +1,24 @@
+{
+  "format_version": "1.17.41",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "mm:mob_monitor"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "P",
+      "I",
+      "L"
+    ],
+    "key": {
+      "P": "minecraft:paper",
+      "I": "minecraft:iron_ingot",
+      "L": "minecraft:leather"
+    },
+    "result": [
+      "mm:mob_monitor"
+    ]
+  }
+}
