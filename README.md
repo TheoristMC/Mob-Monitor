@@ -4,7 +4,7 @@
 
 Ever wonder what your pets and animals are up to in your Minecraft world? With the [**Mob Monitor**](#mob-monitor-1), you can keep track of your furry, feathery, or scaly companions in real-time!
 
-Download both BP & RP listed in the `packs` folder.
+Download [here](https://github.com/TheoristMC/Mob-Monitor/releases/tag/releases).
 
 # Content
 
